@@ -10,6 +10,7 @@ var loadGoogleMapAutocomplete = function (fields){
       google.maps.event.addListener(autocomplete[index], 'place_changed', function() {
         place[index] = autocomplete[index].getPlace();
         locationResult[each] = place[index];
+        $("#"+each).trigger("locationGenerated");
       });
     });
   });
