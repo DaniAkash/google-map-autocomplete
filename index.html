@@ -14,10 +14,10 @@
   <script>
     var fields = ['address1', 'address2'];
     loadGoogleMapAutocomplete(fields);
-    $('#address1').on('change', function() {
+    $('#address1').on('locationGenerated', function() {
       $("#latlong1").text(locationResult.address1.geometry.location.lat()+', '+locationResult.address1.geometry.location.lng());
     });
-    $('#address2').on('change', function() {
+    $('#address2').on('locationGenerated', function() {
       $("#latlong2").text(locationResult.address2.geometry.location.lat()+', '+locationResult.address2.geometry.location.lng());
     });
   </script>
