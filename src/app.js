@@ -1,6 +1,7 @@
 GoogleMapsLoader.LIBRARIES = ['geometry', 'places'];
 var autocomplete = [];
 var place = [];
+var locationResult = {};
 var loadGoogleMapAutocomplete = function (fields){
   GoogleMapsLoader.load(function(google) {
     fields.forEach(function(each, index){
@@ -8,8 +9,7 @@ var loadGoogleMapAutocomplete = function (fields){
 
       google.maps.event.addListener(autocomplete[index], 'place_changed', function() {
         place[index] = autocomplete[index].getPlace();
-        console.log(place[index].geometry.location.lat()+', '+place[index].geometry.location.lng());
-        $("#"+results[index]).text(place[index].geometry.location.lat()+', '+place[index].geometry.location.lng());
+        locationResult[each] = place[index];
       });
     });
   });
