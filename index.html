@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MAP Autocomplete</title>
+    <script src="google-map-autocomplete.js"></script>
+  </head>
+  <body>
+    <input type="text" id="address1" style="width: 500px;"/>
+    <span id="latlong1"></span>
+    <input type="text" id="address2" style="width: 500px;"/>
+    <span id="latlong2"></span>
+  </body>
+  <script>
+    var fields = ['address1', 'address2'];
+    var results = ['latlong1', 'latlong2'];
+    loadGoogleMapAutocomplete(fields);
+  </script>
+</html>
